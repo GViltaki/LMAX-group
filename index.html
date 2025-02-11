@@ -11,15 +11,34 @@
 
 <body>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const burgerMenu = document.querySelector(".burger-icon");
+            const navList = document.querySelector(".nav");
+    
+            burgerMenu.addEventListener("click", function () {
+                navList.classList.toggle("active");
+    
+                // Change burger icon to close icon or vice versa
+                if (navList.classList.contains("active")) {
+                    burgerMenu.innerHTML = "✖"; // Change to close icon
+                } else {
+                    burgerMenu.innerHTML = "&#9776;"; // Change back to burger icon
+                }
+            });
+        });
+    </script>
+
     <!-- Header Section -->
-    <header class="container-fluid">
+    <header class="container-lg text-center">
         <div class="row py-3">
             <div class="col-6">
                 <img src="assets/images/LMAX_logo.jpg" alt="LMAX Solutions Logo" class="img-fluid-logo">
             </div>
             <div class="col-6 text-end">
                 <nav>
-                    <ul class="nav justify-content-end">
+                    <div id="burger-menu" class="burger-icon">&#9776;</div>
+                    <ul class="nav justify-content-end nav-list">
                         <li class="nav-item"><a class="nav-link text-black" href="#home">Home</a></li>
                         <li class="nav-item"><a class="nav-link text-black" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link text-black" href="#contact">Contact</a></li>
